@@ -1,0 +1,77 @@
+-- Thanks to krive001 to share the code of xmobar
+-- https://github.com/krive001/xmonad-xmobar
+
+Config {
+    font = "xft:Noto Sans LGC:size=11:style=Regular",
+    additionalFonts = ["xft:Noto Sans:size=9:style=Bold","xft:Hack Nerd Font:style=Regular:size=9"]
+   , bgColor          = "#24283b"
+   , fgColor          = "#c0caf5"
+   , position         = TopSize C 98 30
+   , textOffset       = -1
+   , iconOffset       = -8
+   , alpha            = 255
+   , border           = BottomB
+   , borderWidth      = 0
+   , borderColor      = "#c0c5ce"
+   , lowerOnStart     = True
+   , hideOnStart      = False
+   , allDesktops      = True
+   , overrideRedirect = True
+   , pickBroadest     = True
+   , persistent       = True
+   , sepChar          = "%"
+   , alignSep         = "}{"
+   , template         = "<fn=1><action=button=4><action=button=5>%UnsafeStdinReader%</action></action></fn>}<action=`gsimplecal` button=1></action>{<fn=2> %nowplaying% </fn>|<fn=1><fc=#9aa5ce> %update% |</fc></fn> <fn=1>%kbd%</fn> | <fn=1><fc=#2ac3de>%date%</fc></fn> | <fn=1>%battery%</fn>  | <fn=1>%coretemp%</fn> | <fn=1>%multicpu%</fn> | <fn=1>%memory%</fn> | <fn=1>%wlp61s0wi%</fn> | <action=`pavucontrol` button=3><action=`XMMute` button=1><action=button=4><action=button=5><fn=1>%XVol%</fn> </action></action></action></action>"
+   , commands         =
+      [ Run MultiCpu                            [ "--template" , "<fc=#73daca><fn=1> cpu: </fn></fc><fc=white></fc><total> %"
+                                                , "--Low"      , "50"        -- units: %
+                                                , "--High"     , "85"        -- units: %
+                                                , "--low"      , "#9ece6a"
+                                                , "--normal"   , "#e0af68"
+                                                , "--high"     , "#f7768e"
+                                                ] 10
+
+      , Run CoreTemp                            [ "--template" , "<fc=#7dcfff><fn=1>temp: </fn></fc><fc=green></fc><core0> °C"
+                                                , "--Low"      , "2"         -- units: °C
+                                                , "--High"     , "80"        -- units: °C
+                                                , "--low"      , "#73daca"
+                                                , "--normal"   , "#e0af68"
+                                                , "--high"     , "#f7768e"
+                                                ] 10
+
+      , Run Memory                              [ "--template" ,"<fc=#2ac3de><fn=1>mem: </fn></fc><fc=white></fc><usedratio> %"
+                                                ] 10
+
+      , Run Battery                             [ "--template" , "<fc=#73daca><fn=1> bat: </fn></fc><fc=white></fc><acstatus> "
+                                                , "--Low"      , "10"        -- units: %
+                                                , "--High"     , "80"        -- units: %
+                                                , "--low"      , "darkred"
+                                                , "--normal"   , "darkorange"
+                                                , "--high"     , "darkgreen"
+
+                                                , "--" -- battery specific options
+                                                            -- discharging status
+                                                            , "-o"	, "<left>% (<timeleft>)"
+                                                            -- AC "on" status
+                                                            , "-O"	, "<fc=#e0af67>Charging</fc>"
+                                                            -- charged status
+                                                            , "-i"	, "<fc=#9ece6a>Charged</fc>"
+                                                ] 50
+
+, Run Wireless "wlp61s0" ["-L","0","-H","32","--normal","#9ece6a","--high","#f7768e"] 10
+
+      , Run Com "/bin/bash" ["-c", "XMgetvolume"]  "XVol" 10
+
+
+      , Run Kbd                                [  ("us" , "<fc=#e0af68>US</fc>")
+                                                , ("ru", "<fc=#f7768e>RU</fc>")
+                                                , ("am(phonetic-alt)", "<fc=#9ece6a>AM</fc>")]
+
+      , Run UnsafeStdinReader
+
+	  , Run Com "/bin/bash" ["-c",  "XMKupdate"] "update" 600
+    , Run Com "/bin/bash" ["-c", "bash nowPlaying.sh"] "nowplaying" 10
+
+      , Run Date                                " %b %d %Y - (%H:%M) " "date" 50]
+
+}
