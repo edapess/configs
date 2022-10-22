@@ -2,6 +2,7 @@ from libqtile.config import Key
 from libqtile.command import lazy
 
 mod = "mod4"
+mod2 = "control"
 
 keys = [
 
@@ -18,6 +19,8 @@ keys = [
     Key([mod, "shift"], "q", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
 
+# CTR + SHIFT KEYS
+    Key([mod2, 'shift'], "return", lazy.widget["keyboardlayout"].next_keyboard(), desc="Next keyboard layout."),
 
 # QTILE LAYOUT KEYS
     Key([mod], "n", lazy.layout.normalize()),

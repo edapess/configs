@@ -35,6 +35,7 @@ from libqtile.widget.wlan import Wlan
 from libqtile.widget.cmus import Cmus
 from libqtile.widget.pomodoro import Pomodoro
 from libqtile.widget.check_updates import CheckUpdates
+from libqtile.widget.keyboardlayout import KeyboardLayout
 
 #utils imports (etc functions)
 from utils import get_window_name
@@ -133,7 +134,17 @@ def init_widgets_list(primary):
                                 threshold = 80
                         ),
 
-                left_arrow(based_colors['light_orange'],colorfull_colors['sky_blue']),
+                left_arrow(based_colors['light_orange'],based_colors['orange']),
+
+                KeyboardLayout(
+                                font="Noto Sans Bold",
+                                configured_keyboards = ['us', 'ru', 'am phonetic-alt'],
+                                display_map = {'us':'US','ru':'RU','am phonetic-alt':'am'},
+                                fontsize = 12,
+                                background = based_colors['orange'],
+                ),
+
+                left_arrow(based_colors['orange'],colorfull_colors['sky_blue']),
 
                 Battery(
                                 font="Noto Sans Bold",
@@ -157,7 +168,7 @@ def init_widgets_list(primary):
                 
                 CheckUpdates(
                                 font="Noto Sans Bold",
-                                distro='Arch_yay',
+                                distro='Arch_Sup',
                                 colour_have_updates=based_colors['alert'],
                                 colour_no_updates = light_colors['green_sheen'],
                                 background = based_colors['risin_black'],
