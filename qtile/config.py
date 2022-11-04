@@ -49,7 +49,11 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule
 from libqtile.command import lazy
 from libqtile.widget import Spacer
 
-from top_bar import init_widgets_list
+################## choose your top bar here  ################
+# from top_bars.top_bar import init_widgets_list
+from top_bars.top_bar_minimal import init_widgets_list
+
+
 from workspaces import groups
 
 from colors import based_colors
@@ -160,8 +164,8 @@ widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=24, opacity=1)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=24, opacity=1))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=20, opacity=1, border_width=[6, 8, 6, 8],border_color=based_colors['background_dark'])),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20, opacity=1,border_width=[6, 8, 6, 8],border_color=based_colors['background_dark']))]
 screens = init_screens()
 
 
@@ -244,6 +248,7 @@ floating_types = ["notification", "toolbar", "splash", "dialog"]
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
+reconfigure_screens = True
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
     *layout.Floating.default_float_rules,
