@@ -37,3 +37,16 @@ based_colors = {
         'light_background' : "#565f89",
         'purple_background': "#9aa5ce"
         }
+
+fractal_red = {
+        "eggplant" :"#5D4150",
+        "dark_byzantium" : "#403545",
+        "bright_maroon" : "#B42F47",
+        "powder_blue" : "#97D2D7",
+        "quinacridone_magenta" : "#914053",
+        "dark_electric_blue" : "#5E7584",
+        "pale_spring_bud" : "#D8DFBB",
+        "morning_blue" : "#A0AFA0",
+        "indian_red" : "#CD5965",
+        "light_cyan" : "#D1E9E2"
+}

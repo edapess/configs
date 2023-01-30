@@ -32,7 +32,7 @@ fi
 run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
 
 #Some ways to set your wallpaper besides variety or nitrogen
-feh --bg-fill $HOME/.config/qtile/assets/lok-du-asset.jpg &
+feh --bg-fill $HOME/.config/qtile/assets/fractal_red.jpg &
 #feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #wallpaper for other Arch based systems
 #feh --bg-fill /usr/share/archlinux-tweak-tool/data/wallpaper/wallpaper.png &

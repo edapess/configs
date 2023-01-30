@@ -83,6 +83,14 @@ def left_circle(bg_color, fg_color):
         background=bg_color,
         foreground=fg_color)
 
+def icon(icon: str, bg_color, fg_color):
+    return TextBox(
+        text=icon,
+        padding=5,
+        fontsize=22,
+        background=bg_color,
+        foreground=fg_color)
+
 def spacer():
     return Spacer(
          background=based_colors['background_dark']
