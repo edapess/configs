@@ -36,22 +36,22 @@ conky.config = {
 	gap_x = 10,									-- pixels between right or left border
 	gap_y = 10,									-- pixels between bottom or left border
 	minimum_height = 200,						-- minimum height of window
-	minimum_width = 300,						-- minimum height of window
-	maximum_width = 600,						-- maximum height of window
+	minimum_width = 280,						-- minimum height of window
+	maximum_width = 280,						-- maximum height of window
 
 	--Graphical
 
 	border_inner_margin = 5, 					-- margin between border and text
 	border_outer_margin = 5, 					-- margin between border and edge of window
-	border_width = 3, 							-- border width in pixels
+	border_width = 0, 							-- border width in pixels
 	default_bar_width = 280,					-- default is 0 - full width
 	default_bar_height = 10,					-- default is 6
 	default_gauge_height = 25,					-- default is 25
 	default_gauge_width =40,					-- default is 40
 	default_graph_height = 40,					-- default is 25
 	default_graph_width = 153,					-- default is 0 - full width
-	default_shade_color = '#24283b',			-- default shading colour
-	default_outline_color = '#24283b',			-- default outline colour
+	default_shade_color = '#000000',			-- default shading colour
+	default_outline_color = '#000000',			-- default outline colour
 	draw_borders = false,						-- draw borders around text
 	draw_graph_borders = true,					-- draw borders around graphs
 	draw_shades = false,						-- draw shades
@@ -77,10 +77,10 @@ conky.config = {
 	--Windows
 
 	own_window = true,							-- create your own window to draw
-	own_window_argb_value = 255,				    -- real transparency - composite manager required 0-255
+	own_window_argb_value = 150,				    -- real transparency - composite manager required 0-255
 	own_window_argb_visual = true,				-- use ARGB - composite manager required
 	own_window_class = 'Conky',					-- manually set the WM_CLASS name for use with xprop
-	own_window_colour = '#1a1b26',				-- set colour if own_window_transparent no
+	own_window_colour = '#000000',				-- set colour if own_window_transparent no
 	own_window_hints = 'undecorated,below,above,sticky,skip_taskbar,skip_pager',  -- if own_window true - just hints - own_window_type sets it
 	own_window_transparent = false,				-- if own_window_argb_visual is true sets background opacity 0%
 	own_window_title = 'system_conky',			-- set the name manually  - default conky "hostname"
@@ -90,8 +90,8 @@ conky.config = {
 	--Colours
 
 	default_color = '#ff0000',  				-- default color and border color
-	color1 = 'cfc9c2',
-	color2 = '#9aa5ce',
+	color1 = '#FFFFFF',
+	color2 = '#929292',
 	color3 = '#cccccc',
 	color4 = '#BDBDBD',
 	color5 = '#CCCCCC',
@@ -136,7 +136,7 @@ ${color1}[Alt]+F3${alignr}${color2}Alt Menu${color}
 ${color1}${hr}${color}
 ${color1}[S]+Enter${alignr}${color2}Terminal${color}
 ${color1}[S]+[Shift]+Enter${alignr}${color2}File Manager${color}
-${color1}[Ctrl]+[Alt]+V${alignr}${color2}Brave${color}
+${color1}[Ctrl]+[Alt]+V${alignr}${color2}Vivaldi${color}
 ${color1}[S]+F2${alignr}${color2}Editor${color}
 ${color1}[S]+F6${alignr}${color2}Media Player${color}
 ${color1}[S]+[Space]${alignr}${color2}Change Layout${color}

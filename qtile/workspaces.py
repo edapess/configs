@@ -23,10 +23,11 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
 #group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
-group_labels = ["", "", "", "", "", "", "", "", "", "",]
+# group_labels = ["", "", "", "", "", "", "", "", "", "",]
 # group_labels = ["www", "code", "term", "sys", "doc", "vid", "mus", "files", "chat", "git",]
-
-group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
+#group_labels awesome
+group_labels = ["", "", "", "", "", "", "", "", "", "",]
+group_layouts = ["monadtall", "max", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
 #group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
 
 for i in range(len(group_names)):

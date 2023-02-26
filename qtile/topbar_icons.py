@@ -54,7 +54,7 @@ def left_arrow(bg_color, fg_color):
     return TextBox(
         text='\uE0B2',
         padding=0,
-        fontsize=22,
+        fontsize=30,
         background=bg_color,
         foreground=fg_color)
 
@@ -63,7 +63,7 @@ def right_arrow(bg_color, fg_color):
     return TextBox(
         text='\uE0B0',
         padding=0,
-        fontsize=22,
+        fontsize=30,
         background=bg_color,
         foreground=fg_color)
 
@@ -83,13 +83,15 @@ def left_circle(bg_color, fg_color):
         background=bg_color,
         foreground=fg_color)
 
-def icon(icon: str, bg_color, fg_color):
+def icon(icon: str, bg_color, fg_color, font="FiraCode Nerd"):
     return TextBox(
         text=icon,
         padding=5,
-        fontsize=22,
+        fontsize=18,
         background=bg_color,
-        foreground=fg_color)
+        foreground=fg_color,
+        font = font,
+        )
 
 def spacer():
     return Spacer(

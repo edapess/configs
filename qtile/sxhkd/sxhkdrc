@@ -64,7 +64,7 @@ super + e
 
 #Browser
 super + w
-    Brave-browser
+    vivaldi-stable
 
 #Conky-toggle
 super + c
@@ -213,9 +213,10 @@ ctrl + alt + Return
 ctrl + alt + t
     alacritty
 
-#Brave
+#Vivaldi
 ctrl + alt + v
-    brave
+    vivaldi-stable
+
 #Xfce4-appfinder
 ctrl + alt + a
     xfce4-appfinder

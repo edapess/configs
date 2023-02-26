@@ -35,7 +35,8 @@ based_colors = {
         'white': '#FCFCFC',
         'risin_black': '#23252F',
         'light_background' : "#565f89",
-        'purple_background': "#9aa5ce"
+        'purple_background': "#9aa5ce",
+        'tokyo_green': "#9ece6a"
         }
 
 fractal_red = {

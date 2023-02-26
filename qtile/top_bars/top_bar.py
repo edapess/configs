@@ -57,12 +57,12 @@ def init_widgets_list(primary):
     widgets_list = [
                 left_system_logos(light_colors['green_sheen'], based_colors['white']),
 
-                GroupBox(font="Noto Sans Bold",
-                                fontsize = 13,
+                GroupBox(font="FiraCode Nerd Font",
+                                fontsize = 15,
                                 margin_y = 2,
                                 margin_x = 0,
                                 padding_y = 10,
-                                padding_x = 5,
+                                padding_x = 10,
                                 borderwidth = 0,
                                 disable_drag = True,
                                 active = based_colors['background_dark'],
@@ -144,7 +144,14 @@ def init_widgets_list(primary):
                                 background = based_colors['orange'],
                 ),
 
-                left_arrow(based_colors['orange'],colorfull_colors['sky_blue']),
+                left_arrow(based_colors['orange'],based_colors['background_dark']),
+                 Volume(
+                        font="Noto Sans Bold",
+                        foreground = based_colors['white'],
+                        background = based_colors['background_dark'],
+                        fmt='Vol: {}'
+                ),
+                left_arrow(based_colors['background_dark'],colorfull_colors['sky_blue']),
 
                 Battery(
                                 font="Noto Sans Bold",
@@ -172,7 +179,7 @@ def init_widgets_list(primary):
                                 colour_have_updates=based_colors['alert'],
                                 colour_no_updates = light_colors['green_sheen'],
                                 background = based_colors['risin_black'],
-                                execute = 'alacritty -e yay',
+                                execute = 'pamac-manager',
                                 display_format = 'upd {updates}',
                                 initial_text = 'check...',
                                 no_update_string = 'yay'
@@ -189,13 +196,13 @@ def init_widgets_list(primary):
                         ),
 
                 ]
-    if primary:
-        widgets_list.insert(
-                -1,
-            Systray(
-                foreground=based_colors['light_orange'],
-                background=based_colors['purple_background'],
-                padding=15,
-            ),
-        )
+#     if primary:
+#         widgets_list.insert(
+#                 -1,
+#             Systray(
+#                 foreground=based_colors['light_orange'],
+#                 background=based_colors['purple_background'],
+#                 padding=15,
+#             ),
+#         )
     return widgets_list

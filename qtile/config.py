@@ -52,7 +52,8 @@ from libqtile.widget import Spacer
 ################## choose your top bar here  ################
 # from top_bars.top_bar import init_widgets_list
 # from top_bars.top_bar_minimal import init_widgets_list
-from top_bars.top_bar_simple import init_widgets_list
+# from top_bars.top_bar_simple import init_widgets_list
+from top_bars.my_top_bar import init_widgets_list
 
 from workspaces import groups
 
@@ -166,8 +167,8 @@ widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=20, opacity=1, border_width=[6, 8, 6, 8],border_color=fractal_red['dark_byzantium'])),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20, opacity=1,border_width=[6, 8, 6, 8],border_color=fractal_red['dark_byzantium']))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=20, opacity=1, border_width=[6, 8, 6, 8],border_color=based_colors['background_dark'])),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=20, opacity=1,border_width=[6, 8, 6, 8],border_color=based_colors['background_dark']))]
 screens = init_screens()
 
 
