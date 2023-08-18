@@ -1,48 +1,63 @@
 from libqtile import bar, widget
 from libqtile.config import Screen
-
+from colors import accent, base, secondary, secondary2, text, alert
 def get_bar():
     return [
         Screen(
             top=bar.Bar(
                 [
+                widget.Image(
+                    filename='~/.config/qtile/assets/1.png',
+                ),
                     widget.GroupBox(
-                        font="FontAwesome",
-                        fontsize=24,
-                        borderwidth=3,
+                        font="CaskaydiaCove Nerd Font",
+                        fontsize=18,
+                        margin_y = 2,
+                        margin_x = 0,
+                        padding_y = 10,
+                        padding_x = 10,
+                        border=0,
+                        # borderwidth = 6,
                         highlight_method='block',
-                        active='#CAA9E0',
-                        block_highlight_text_color="#91B1F0",
+                        active=text,
+                        block_highlight_text_color=text,
                         highlight_color='#4B427E',
-                        inactive='#282738',
+                        inactive=secondary2,
                         foreground='#4B427E',
-                        background='#353446',
+                        background=accent,
                         this_current_screen_border='#353446',
                         this_screen_border='#353446',
                         other_current_screen_border='#353446',
                         other_screen_border='#353446',
-                        urgent_border='#353446',
-                        rounded=True,
+                        urgent_border=alert,
+                        rounded=False,
                         disable_drag=True,
                     ),
-                    widget.CurrentLayout(),
-                    widget.WindowName(),
+                    widget.CurrentLayout(
+                        font="FiraCode Nerd Font Mono Med",
+                        background=base,
+                        
+                    ),
+                    widget.WindowName(
+
+                        background=accent,
+
+                    ),
                     widget.Chord(
                         chords_colors={
                             "launch": ("#ff0000", "#ffffff"),
                         },
                         name_transform=lambda name: name.upper(),
                     ),
-                    widget.TextBox("default config", name="default"),
-                    widget.TextBox("Press <M-r> to spawn", foreground="#d75f5f"),
                     widget.Systray(),
                     widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                     widget.Battery(),
                     widget.QuickExit(),
                 ],
-                24,
-                # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-                # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+                32,
+                border_color = '#282738',
+                border_width = [0,0,0,0],
+                margin = [12,32,6,32],
             ),
         ),
     ]
