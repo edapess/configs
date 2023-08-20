@@ -1,18 +1,27 @@
 from libqtile import layout
+from colors import base, alert, accent, alert, secondary, text
+
+def init_layout_theme():
+    return {"margin":5,
+            "border_width":2,
+            "border_focus": text,
+            "border_normal": secondary
+            }
+
+layout_theme = init_layout_theme()
 
 def init_layouts():
     return [
-    layout.Max(),
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
-    # Try more layouts by unleashing below layouts.
-    layout.Stack(num_stacks=2),
-    layout.Bsp(),
-    layout.Matrix(),
-    layout.MonadTall(),
-    layout.MonadWide(),
-    layout.RatioTile(),
-    layout.Tile(),
-    layout.TreeTab(),
-    layout.VerticalTile(),
-    layout.Zoomy(),
+    layout.Max(**layout_theme),
+    layout.Columns(**layout_theme),
+    layout.Stack(**layout_theme),
+    layout.Bsp(**layout_theme),
+    layout.Matrix(**layout_theme),
+    layout.MonadTall(**layout_theme),
+    layout.MonadWide(**layout_theme),
+    layout.RatioTile(**layout_theme),
+    layout.Tile(**layout_theme),
+    layout.TreeTab(**layout_theme),
+    layout.VerticalTile(**layout_theme),
+    layout.Zoomy(**layout_theme),
 ]

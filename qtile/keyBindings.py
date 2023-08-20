@@ -1,6 +1,7 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
 from libqtile import extension
+from colors import text, base, accent
 
 def init_key_bindings(mod, terminal="konsole"):
     return  [
@@ -21,6 +22,7 @@ def init_key_bindings(mod, terminal="konsole"):
         Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
         Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
         Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+        Key([mod, "shift"], "Tab", lazy.prev_layout(), desc="Toggle between layouts"),
         Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
         Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
         Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
@@ -28,11 +30,13 @@ def init_key_bindings(mod, terminal="konsole"):
         Key([mod], 'r', lazy.run_extension(extension.DmenuRun(
         dmenu_prompt=">",
         dmenu_font="Andika-8",
-        background="#15181a",
-        foreground="#00ff00",
-        selected_background="#079822",
-        selected_foreground="#fff",
+        background=base,
+        foreground=text,
+        selected_background=accent,
+        selected_foreground=text,
         dmenu_command="dmenu_run",
         bottom=True,
+        font="FontAwesome Bold",
+        fontsize=20
     ))),
     ]

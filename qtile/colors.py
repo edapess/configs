@@ -1,10 +1,11 @@
 colors = {
-    "secondary2": "#778A8C",
-    "secondary": "#C1D9D9",
-    "accent": "#3A4039",
-    "base": "#252625",
+    "secondary2": "#455159",
+    "secondary": "#848C8B",
+    "accent": "#8F9BA6",
+    "base": "#2E3940",
     "text": "#F2F2F0",
-    "alert": "d62828",
+    "alert": "#73495D",
+    "darkBase": "#262F34"
 }
 
 
@@ -14,3 +15,4 @@ accent=colors["accent"]
 base=colors["base"]
 text=colors["text"]
 alert=colors["alert"]
+darkBase=colors["darkBase"]

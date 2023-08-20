@@ -33,14 +33,14 @@ from topBar import get_bar
 from keyBindings import init_key_bindings
 from layouts import init_layouts
 from workspaces import groups
-
+from os.path import expanduser
 mod = "mod4"
 terminal = guess_terminal()
 
 @hook.subscribe.startup_once
 def autostart_once():
-    subprocess.run('~/.config/qtile/autostart_once.sh')
-    subprocess.call([home])
+    home = expanduser("~")
+    subprocess.run([home + '/.config/qtile/autostart.sh'], shell=True)
 
 keys=init_key_bindings(mod)
 
@@ -50,7 +50,6 @@ for i in groups:
 
         #CHANGE WORKSPACES
         Key([mod], i.name, lazy.group[i.name].toscreen()),
-        Key([mod, "shift" ], "Tab", lazy.screen.prev_group()),
         Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
 
         # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
