@@ -1,0 +1,50 @@
+[window]
+opacity = 1
+
+[scrolling]
+# Maximum number of lines in the scrollback buffer.
+# Specifying '0' will disable scrolling.
+history = 50000
+
+# Scrolling distance multiplier.
+# multiplier = 3
+[keyboard]
+bindings = [
+  { key = "Right", mods = "Alt", chars = "\u001BF" },
+  { key = "Left",  mods = "Alt", chars = "\u001BB" },
+]
+
+[font]
+  
+normal = { family = "SpaceMono Nerd Font Propo", style = "Regular" }
+bold = { family = "SpaceMono Nerd Font Propo", style = "Regular" }
+
+
+size = 14.0
+
+# Default colors
+[colors.primary]
+background = '#24283b'
+foreground = '#839496'
+
+# Normal colors
+[colors.normal]
+black   = '#073642'
+red     = '#da8789'
+green   = '#aeca91'
+yellow  = '#e5cb95'
+blue    = '#83bbed'
+magenta = '#c893de'
+cyan    = '#7cbfcb'
+white   = '#e3e5e8'
+
+# Bright colors
+[colors.bright]
+black   = '#073642'
+red     = '#da8789'
+green   = '#aeca91'
+yellow  = '#e5cb95'
+blue    = '#83bbed'
+magenta = '#c893de'
+cyan    = '#7cbfcb'
+white   = '#e3e5e8'
