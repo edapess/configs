@@ -15,6 +15,8 @@ export ZSH="$HOME/.oh-my-zsh"
 #************************           ***************
 #**************************************************
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
+
 #I commented zsh theme, because I use powerline
 #ZSH_THEME="agnoster"
     zstyle ':omz:update' mode auto      # update automatically without asking
@@ -26,7 +28,7 @@ export ZSH="$HOME/.oh-my-zsh"
 #************************   OMZ PLUGINS ***************
 #************************               ***************
 #******************************************************
-plugins=(git wakatime zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git git-flow-completion  zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -61,10 +63,11 @@ export CHROME_EXECUTABLE=/usr/bin/chromium
 #************************           ***************
 #**************************************************
 
-export ANDROID_SDK_ROOT=/home/edapess/Android/Sdk
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/build-tools/35.0.0
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 
 #**************************************************
 #************************           ***************
@@ -80,8 +83,8 @@ export PATH=~/myPacks/eww/target/release/eww:$PATH
 #************************************************
 
 ##some commands
-alias ls="exa --icons"
-alias lst="exa --tree --icons"
+alias ls="eza --icons"
+alias lst="eza --tree --icons"
 alias ide="bash ide.sh"
 alias idev="bash idev.sh"
 alias vi="nvim"
@@ -93,12 +96,34 @@ alias hw="hwinfo --short"
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+alias rg='rg --color=auto'
 alias eww='~/myPacks/eww/target/release/eww'
+alias gdclean='cd android && ./gradlew clean && cd ../'
+alias top='btop'
+alias gc='git checkout'
+alias gcm='git commit -m'
+alias gcb='git checkout -b'
+alias gs='git status'
+alias gd='git diff'
+alias gl='git log'
+alias gss='git stash push -m'
+alias gsp='git stash pop'
+alias gsl='git stash list'
+alias gpush='git push'
+alias gcommit='git commit -m'
+alias listIosDevices='xcrun xctrace list devices'
+alias listAndroidDevices='adb devices'
+alias restartPortfolium='docker compose down && docker compose build --no-cache &&  docker compose --env-file ~/Development/Portfolium/dev/portfolium-be/.env  up -d'
 #SHELL SCRIPTS
 #path to z 
-. /usr/share/z/z.sh
+. /opt/homebrew/Cellar/z/1.12/etc/profile.d/z.sh
 #----source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+export PATH=/opt/homebrew/bin:$PATH
+export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
+
+
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #----[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # -----source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
@@ -111,3 +136,15 @@ eval "$(starship init zsh)"
 #colorscript random
 #cpufetch
 #screenfetch
+#fastfetch
+export PATH=/usr/local/bin:$PATH
+
+
+
+source $(brew --prefix python)/libexec/bin
+
+source $(brew --prefix nvm)/nvm.sh
+
+export GPG_TTY=$(tty)
+eval "$(rbenv init -)"
+

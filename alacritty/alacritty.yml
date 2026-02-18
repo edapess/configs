@@ -1,92 +1,49 @@
+[window]
+opacity = 1
 
-window:
-  opacity: 1
+[scrolling]
+# Maximum number of lines in the scrollback buffer.
+# Specifying '0' will disable scrolling.
+history = 50000
 
-scrolling:
-  # Maximum number of lines in the scrollback buffer.
-  # Specifying '0' will disable scrolling.
-  history: 50000
+# Scrolling distance multiplier.
+# multiplier = 3
+[keyboard]
+bindings = [
+    { key = "Right", mods = "Alt", chars = "\u001BF" },
+    { key = "Left", mods = "Alt", chars = "\u001BB" },
+]
 
-  # Scrolling distance multiplier.
-  #multiplier: 3
+[font]
 
-# Font configuration
-font:
-  # Normal (roman) font face
-  normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    family: Caskaydia Cove Nerd Font
+normal = { family = "FiraCode Nerd Font", style = "Regular" }
+bold = { family = "FiraCode Nerd Font", style = "Regular" }
 
-    # The `style` can be specified to pick a specific face.
-    style: Regular
+size = 15.0
 
-  # Bold font face
-  bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: CaskaydiaCove Nerd Font 
+# Default colors
+[colors.primary]
+background = '#24283b'
+foreground = '#839496'
 
-    # The `style` can be specified to pick a specific face.
-    style: Bold
+# Normal colors
+[colors.normal]
+black = '#073642'
+red = '#da8789'
+green = '#aeca91'
+yellow = '#e5cb95'
+blue = '#83bbed'
+magenta = '#c893de'
+cyan = '#7cbfcb'
+white = '#e3e5e8'
 
-  # Italic font face
-  italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: Caskaydia Cove Nerd Font
-
-    # The `style` can be specified to pick a specific face.
-    style: Italic
-
-  # Bold italic font face
-  bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: Caskaydia Cove Nerd Font
-
-    # The `style` can be specified to pick a specific face.
-    style: Bold Italic
-
-  # Point size
-  size: 11.0
-
-# Colors (ArcoLinux)
-colors:
-  # Default colors
-  primary:
-   background: '#1a1b26'
-   foreground: '#F9F9F9'
-
-   
-  # Normal colors
-  normal:
-    black:   '#3f3f3f'
-    red:     '#cc0000'
-    green:   '#4e9a06'
-    yellow:  '#c4a000'
-    blue:    '#94bff3'
-    magenta: '#85678f'
-    cyan:    '#06989a'
-    white:   '#dcdccc'
-
-  # Bright colors
-  bright:
-    black:   '#9aa5ce'
-    red:     '#fc5454'
-    green:   '#8ae234'
-    yellow:  '#fce94f'
-    blue:    '#94bff3'
-    magenta: '#b294bb'
-    cyan:    '#93e0e3'
-    white:   '#ffffff'
+# Bright colors
+[colors.bright]
+black = '#073642'
+red = '#da8789'
+green = '#aeca91'
+yellow = '#e5cb95'
+blue = '#83bbed'
+magenta = '#c893de'
+cyan = '#7cbfcb'
+white = '#e3e5e8'
